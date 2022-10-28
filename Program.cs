@@ -29,15 +29,39 @@ int SommaElementiArray(int[] array)
     return sum;
 }
 
-int[] sampleArray = { 2, 6, 7, 5, 3, 9 };
-StampaArray(sampleArray);
-for(int index = 0; index < sampleArray.Length; index++)
+//int[] sampleArray = { 2, 6, 7, 5, 3, 9 };
+//StampaArray(sampleArray);
+//for(int index = 0; index < sampleArray.Length; index++)
+//{
+//    int arrayNumber = sampleArray[index];
+//    Quadrato(arrayNumber);
+//}
+//StampaArray(sampleArray);
+//Console.WriteLine(SommaElementiArray(sampleArray));
+//int[] elevatedNumbersArray = ElevaArrayAlQuadrato(sampleArray);
+//StampaArray(elevatedNumbersArray);
+
+
+//Bonus con array creato dall'utente
+Console.Write("Quanti numeri vuoi che contenga il tuo array?: ");
+int arrayLength = Int32.Parse(Console.ReadLine());
+int[] userArray = new int[arrayLength];
+
+for(int index = 0; index < arrayLength; index++)
 {
-    int arrayNumber = sampleArray[index];
+    Console.Write("Digita un numero: ");
+    int userNumber = Int32.Parse(Console.ReadLine());
+    userArray[index] = userNumber;
+}
+
+StampaArray(userArray);
+for (int index = 0; index < userArray.Length; index++)
+{
+    int arrayNumber = userArray[index];
     Quadrato(arrayNumber);
 }
-StampaArray(sampleArray);
-Console.WriteLine(SommaElementiArray(sampleArray));
-int[] elevatedNumbersArray = ElevaArrayAlQuadrato(sampleArray);
+StampaArray(userArray);
+Console.WriteLine(SommaElementiArray(userArray));
+int[] elevatedNumbersArray = ElevaArrayAlQuadrato(userArray);
 StampaArray(elevatedNumbersArray);
 
